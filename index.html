@@ -11,23 +11,19 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <!-- daisy UI -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0/themes.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            plugins: [tailwindcss.plugin(({ addComponents }) => {
+                // Optional: Extend or add components here
+            })],
             theme: {
-                extend: {
-                    colors: {
-                        clifford: '#da373d',
-                    }
-                }
-            }
-        }
+                extend: {},
+            },
+        };
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/daisyui@4.12.24"></script>
+
     <style>
         .poppins-thin {
             font-family: "Poppins", sans-serif;
@@ -143,13 +139,63 @@
 
 <body>
     <header>
-        <nav id="navigation" class="rounded-e-2xl h-24 lg:h-auto mx-32 bg-green-400">
-            <div id="dev-board-left">
-                <h1></h1>
+        <nav id="navigation" class="rounded-2xl h-24 lg:h-35 lg:w-auto mx-32 my-4 bg-slate-100  ">
+            <div id="nav-Left" class="flex flex-row justify-between py-6 px-5">
+                <div id="nav-left-logo" class="flex flex-row justify-around gap-2">
+                    <img src="assets/logo.png" alt="nav-logo">
+                    <h1 class="font-bold pt-3 text-3xl"> <span class="text-green-500">Dev</span><span> Board</span></h1>
+                </div>
+
+
+                <div id="nav-right" class="flex flex-row justify-around gap-20">
+                    <div class="flex flex-row gap-2">
+                        <img src="assets/checkbox.png" alt="checkbox">
+                        <h1 class="text-3xl font-bold"><span id="num-count">23</span></h1>
+                    </div>
+                    <div class="cursor-pointer"> <img src="assets/theme-btn.png" alt="theme">
+                    </div>
+                </div>
+
             </div>
-            <div id="dev-board-right"></div>
+
         </nav>
     </header>
+    <main>
+        <!-- main content start fro here -->
+        <div class="w-auto lg:mx-32 flex gap-8 ">
+            <!-- dev board  -->
+            <div class="w-3/4 bg-slate-100 h-[800px] rounded-2xl ">
+                <!-- card row-1 -->
+                <div class="w-auto flex gap-3 mx-5 my-5">
+                    <!-- Shop Ease -->
+                    <div class="w-1/4 bg-slate-200 rounded-xl h-32 flex flex-row gap-6 items-center pl-10">
+                        <div>
+                            <img src="assets/checkbox.png" alt="">
+                        </div>
+
+                        <div class="">
+                            <h3 class="text-xl">Task Assigned</h3>
+                            <p class="text-2xl font-bold"><span id="task-count">06</span></p>
+                        </div>
+                    </div>
+                    <div class="w-2/4 bg-slate-200 rounded-xl h-32 "></div>
+                    <div class="w-1/4 bg-slate-200 rounded-xl h-32 "></div>
+                </div>
+            </div>
+            <!-- activity log history -->
+            <div class="w-1/4 bg-slate-100 h-[800px] rounded-2xl ">
+                <div class="flex justify-center gap-4 mt-4 ">
+                    <img src="assets/activity.png" alt="">
+                    <h2 class="text-2xl">Activity Log</h2>
+                </div>
+                <div class="flex items-center justify-center pt-9">
+                    <button class="font-bold text-2xl bg-blue-400 rounded-xl h-16 w-60">Clear History</button>
+                </div>
+
+
+            </div>
+        </div>
+    </main>
 
 </body>
 
