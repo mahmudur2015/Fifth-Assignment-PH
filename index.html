@@ -137,7 +137,7 @@
 
 </head>
 
-<body>
+<body onload="fnDayName();fnCurrentDate();">
     <header>
         <nav id="navigation" class="rounded-2xl h-24 lg:h-35 lg:w-auto mx-32 my-4 bg-slate-100  ">
             <div id="nav-Left" class="flex flex-row justify-between py-6 px-5">
@@ -147,9 +147,9 @@
                 </div>
 
 
-                <div id="nav-right" class="flex flex-row justify-around gap-20">
-                    <div class="flex flex-row gap-2">
-                        <img src="assets/checkbox.png" alt="checkbox">
+                <div id="nav-right" class="flex flex-row justify-around gap-20 items-center">
+                    <div class="flex flex-row gap-2 items-center">
+                        <div> <img src="assets/checkbox.png" alt="checkbox"></div>
                         <h1 class="text-3xl font-bold"><span id="num-count">23</span></h1>
                     </div>
                     <div class="cursor-pointer"> <img src="assets/theme-btn.png" alt="theme">
@@ -161,13 +161,12 @@
         </nav>
     </header>
     <main>
-        <!-- main content start fro here -->
         <div class="w-auto lg:mx-32 flex gap-8 ">
-            <!-- dev board  -->
+            <!-- Task Board -->
             <div class="w-3/4 bg-slate-100 h-[800px] rounded-2xl ">
-                <!-- card row-1 -->
+                <!-- First cards row -->
                 <div class="w-auto flex gap-3 mx-5 my-5">
-                    <!-- Shop Ease -->
+                    <!-- Task Count -->
                     <div class="w-1/4 bg-slate-200 rounded-xl h-32 flex flex-row gap-6 items-center pl-10">
                         <div>
                             <img src="assets/checkbox.png" alt="">
@@ -178,8 +177,134 @@
                             <p class="text-2xl font-bold"><span id="task-count">06</span></p>
                         </div>
                     </div>
-                    <div class="w-2/4 bg-slate-200 rounded-xl h-32 "></div>
-                    <div class="w-1/4 bg-slate-200 rounded-xl h-32 "></div>
+                    <!-- Board -->
+                    <div
+                        class="w-2/4 rounded-xl h-32 bg-cyan-400 flex flex-row items-center gap-5 pl-10 cursor-pointer">
+                        <img src="assets/board.png" alt="">
+                        <div class="text-gray-100 text-2xl">
+                            <p>Discover Something</p>
+                            <p>New Today!</p>
+                        </div>
+                    </div>
+                    <!-- Calender -->
+                    <div class="w-1/4 bg-slate-200 rounded-xl h-32 flex flex-row items-center gap-5 pl-10 ">
+                        <div> <img src="assets/calender.png" alt="">
+                        </div>
+                        <div>
+                            <div id="current-dayName"></div>
+                            <div id="current-date"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Second cards row -->
+                <div class="w-auto  flex gap-5 mx-5 my-5 pt-5">
+                    <!-- Task-01 -->
+                    <div class="w-1/3 h-60 rounded-xl bg-zinc-200 ">
+                        <div class=" px-8 py-5">
+                            <p class="text-slate-700">Shopease</p>
+                            <h1 class="text-2xl font-bold pt-3">Fix Mobile button issue</h1>
+                            <p class="text-slate-700 pt-3">A card componont has a fugure,a body part,and inside body there
+                                are title and actions parts</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="pl-4">
+                                <p>Deadline</p>
+                                <p>21-March-2025</p>
+                            </div>
+                            <div>
+                                <button class="font-bold text-2xl bg-blue-400 rounded-xl h-16 w-60">Completed</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-1/3 h-60 rounded-xl bg-zinc-200">
+                        <div class=" px-8 py-5">
+                            <p class="text-slate-700">Shopease</p>
+                            <h1 class="text-2xl font-bold pt-3">Fix Mobile button issue</h1>
+                            <p class="text-slate-700 pt-3">A card componont has a fugure,a body part,and inside body there
+                                are title and actions parts</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="pl-4">
+                                <p>Deadline</p>
+                                <p>21-March-2025</p>
+                            </div>
+                            <div>
+                                <button class="font-bold text-2xl bg-blue-400 rounded-xl h-16 w-60">Completed</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-1/3 h-60 rounded-xl bg-zinc-200">
+                        <div class=" px-8 py-5">
+                            <p class="text-slate-700">Shopease</p>
+                            <h1 class="text-2xl font-bold pt-3">Fix Mobile button issue</h1>
+                            <p class="text-slate-700 pt-3">A card componont has a fugure,a body part,and inside body there
+                                are title and actions parts</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="pl-4">
+                                <p>Deadline</p>
+                                <p>21-March-2025</p>
+                            </div>
+                            <div>
+                                <button class="font-bold text-2xl bg-blue-400 rounded-xl h-16 w-60">Completed</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Third cards row -->
+                <div class="w-auto  flex gap-5 mx-5 my-5 pt-5">
+                    <div class="w-1/3 h-60 rounded-xl bg-zinc-200">
+                        <div class=" px-8 py-5">
+                            <p class="text-slate-700">Shopease</p>
+                            <h1 class="text-2xl font-bold pt-3">Fix Mobile button issue</h1>
+                            <p class="text-slate-700 pt-3">A card componont has a fugure,a body part,and inside body there
+                                are title and actions parts</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="pl-4">
+                                <p>Deadline</p>
+                                <p>21-March-2025</p>
+                            </div>
+                            <div>
+                                <button class="font-bold text-2xl bg-blue-400 rounded-xl h-16 w-60">Completed</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-1/3 h-60 rounded-xl bg-zinc-200">
+                        <div class=" px-8 py-5">
+                            <p class="text-slate-700">Shopease</p>
+                            <h1 class="text-2xl font-bold pt-3">Fix Mobile button issue</h1>
+                            <p class="text-slate-700 pt-3">A card componont has a fugure,a body part,and inside body there
+                                are title and actions parts</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="pl-4">
+                                <p>Deadline</p>
+                                <p>21-March-2025</p>
+                            </div>
+                            <div>
+                                <button class="font-bold text-2xl bg-blue-400 rounded-xl h-16 w-60">Completed</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-1/3 h-60 rounded-xl bg-zinc-200">
+                        <div class=" px-8 py-5">
+                            <p class="text-slate-700">Shopease</p>
+                            <h1 class="text-2xl font-bold pt-3">Fix Mobile button issue</h1>
+                            <p class="text-slate-700 pt-3">A card componont has a fugure,a body part,and inside body there
+                                are title and actions parts</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="pl-4">
+                                <p>Deadline</p>
+                                <p>21-March-2025</p>
+                            </div>
+                            <div>
+                                <button class="font-bold text-2xl bg-blue-400 rounded-xl h-16 w-60">Completed</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- activity log history -->
@@ -194,9 +319,12 @@
 
 
             </div>
-        </div>
-    </main>
 
+        </div>
+
+
+    </main>
+    <script src="script/datetime.js"></script>
 </body>
 
 </html>
