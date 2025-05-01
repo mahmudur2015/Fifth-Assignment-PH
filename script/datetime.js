@@ -17,9 +17,3 @@ function fnCurrentDate() {
     onlyDate.innerText = `${month}-${day}-${year}`
 
 }
-
-
-
-
-
-// console.log(`Current Time: ${hours}:${minutes}:${seconds}`);
