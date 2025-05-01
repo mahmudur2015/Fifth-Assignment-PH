@@ -1,3 +1,14 @@
+// Random color changer
+document.getElementById("color-changer").addEventListener('click',function(event){
+    event.preventDefault();
+    fnChangeBGColor();
+})
+// Random color changer
+document.getElementById('discover-blogs').addEventListener('click', function (event) {
+    event.preventDefault()
+    window.location.href="./blogs.html"
+});
+
 //Task-1
 document.getElementById("btn-task-one").addEventListener('click', function (event) {
     event.preventDefault();
